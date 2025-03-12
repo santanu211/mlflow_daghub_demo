@@ -10,7 +10,13 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-mlflow.set_tracking_uri("http://localhost:5000")
+
+import dagshub
+dagshub.init(repo_owner='santanu211', repo_name='mlflow_daghub_demo', mlflow=True)
+
+
+mlflow.set_tracking_uri("https://github.com/santanu211/mlflow_daghub_demo.git")
+
 
 
 # Load dataset
